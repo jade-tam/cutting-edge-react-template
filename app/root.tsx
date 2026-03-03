@@ -5,10 +5,16 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  type MiddlewareFunction,
 } from "react-router";
+import { paraglideMiddleware } from "./paraglide/server";
 
 import type { Route } from "./+types/root";
 import "./app.css";
+
+export const middleware: MiddlewareFunction[] = [
+  (ctx, next) => paraglideMiddleware(ctx.request, () => next()),
+];
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

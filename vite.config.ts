@@ -9,6 +9,13 @@ export default defineConfig({
     paraglideVitePlugin({
       project: "./project.inlang",
       outdir: "./app/paraglide",
+      strategy: ["url", "cookie", "baseLocale"],
+      // Follow this https://inlang.com/m/gerre34r/library-inlang-paraglideJs/strategy#route-level-strategy-overrides
+      routeStrategies: [
+        { match: "/dashboard/:path(.*)?", strategy: ["cookie", "baseLocale"] },
+        { match: "/auth/:path(.*)?", strategy: ["cookie", "baseLocale"] },
+        { match: "/api/:path(.*)?", exclude: true },
+      ],
     }),
     tailwindcss(),
     reactRouter(),

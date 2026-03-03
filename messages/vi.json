@@ -1,4 +1,5 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "example_message": "Xin chào {username}"
+  "example_message": "Xin chào {username}",
+  "go_to_login": "Đi đến Đăng nhập"
 }
