@@ -1,0 +1,36 @@
+{
+  "name": "create-cutting-edge-react-app",
+  "version": "0.1.0",
+  "description": "Scaffold a Cutting Edge React app — React Router 7, Tailwind 4, Paraglide i18n, Iconify",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "create-cutting-edge-react-app": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.9.1",
+    "kleur": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsdown": "^0.20.3",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "rolldown"
+    ]
+  }
+}

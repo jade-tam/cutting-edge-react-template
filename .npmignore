@@ -1,0 +1,11 @@
+src
+tsdown.config.ts
+tsconfig.json
+
+templates/cutting-edge-react/node_modules
+templates/cutting-edge-react/build
+templates/cutting-edge-react/.react-router
+templates/cutting-edge-react/app/paraglide
+templates/cutting-edge-react/project.inlang/cache
+templates/cutting-edge-react/pnpm-lock.yaml
+templates/cutting-edge-react/.vscode

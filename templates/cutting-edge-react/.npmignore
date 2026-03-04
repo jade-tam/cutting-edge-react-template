@@ -1,0 +1,7 @@
+node_modules
+build
+.react-router
+app/paraglide
+project.inlang/cache
+pnpm-lock.yaml
+.vscode
