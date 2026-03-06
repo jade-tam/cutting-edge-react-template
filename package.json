@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Scaffold a Cutting Edge React app — React Router 7, Tailwind 4, Paraglide i18n, Iconify",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jade-tam/cutting-edge-react-template"
+  },
   "type": "module",
   "bin": {
     "create-cutting-edge-react-app": "dist/index.js"
