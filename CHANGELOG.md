@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/jade-tam/cutting-edge-react-template/compare/v1.0.0...v1.0.1) (2026-03-06)
+
+
+### Bug Fixes
+
+* add repository to package json ([956d754](https://github.com/jade-tam/cutting-edge-react-template/commit/956d7543ea460bbdee675b15b5b10edcd3148a7d))
+* add repository to package json ([d2952cf](https://github.com/jade-tam/cutting-edge-react-template/commit/d2952cf5952097e0185f7ae0bfb909f65ec2dcbe))
+
 ## 1.0.0 (2026-03-06)
 
 
