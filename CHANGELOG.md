@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.2](https://github.com/jade-tam/cutting-edge-react-template/compare/v1.0.1...v1.0.2) (2026-03-06)
+
+
+### Bug Fixes
+
+* exclude .vscode folder when publish ([7a9de4f](https://github.com/jade-tam/cutting-edge-react-template/commit/7a9de4f1e2293b37a36d21724f26e5bc8e7df3ad))
+* exclude .vscode folder when publish ([0f05df3](https://github.com/jade-tam/cutting-edge-react-template/commit/0f05df352e4e5b6897cc6de664e62e58982f315b))
+* use PAT instead of default token for release action ([798eb02](https://github.com/jade-tam/cutting-edge-react-template/commit/798eb02d0c14bee7ec6c2ebb588afcc5b40bb425))
+* use PAT instead of default token for release action ([8df235e](https://github.com/jade-tam/cutting-edge-react-template/commit/8df235e17a6207b2a6c77a58f5b31cfc994a4259))
+
 ## [1.0.1](https://github.com/jade-tam/cutting-edge-react-template/compare/v1.0.0...v1.0.1) (2026-03-06)
 
 
