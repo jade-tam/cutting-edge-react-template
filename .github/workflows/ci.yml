@@ -48,6 +48,10 @@ jobs:
       - name: Create test project via CLI
         run: node dist/index.js test-app --pm pnpm
 
+      - name: Install dependencies in generated project
+        working-directory: test-app
+        run: pnpm install
+
       - name: Build the generated template project
         working-directory: test-app
         run: pnpm run build
