@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "inlang.vs-code-extension"
+    "inlang.vs-code-extension",
+    "vunguyentuan.vscode-postcss",
+    "vunguyentuan.vscode-css-variables"
   ]
 }
