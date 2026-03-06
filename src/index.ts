@@ -24,6 +24,16 @@ async function writeJson(filePath: string, data: unknown): Promise<void> {
   await writeFile(filePath, JSON.stringify(data, null, 2) + '\n', 'utf-8');
 }
 
+const validManagers = ['pnpm', 'npm', 'yarn', 'bun'] as const;
+type PackageManager = (typeof validManagers)[number];
+
+const pmFlagIndex = process.argv.indexOf('--pm');
+const argPkgManager = pmFlagIndex !== -1 ? process.argv[pmFlagIndex + 1] : undefined;
+if (argPkgManager !== undefined && !validManagers.includes(argPkgManager as PackageManager)) {
+  console.error(`Invalid --pm value "${argPkgManager}". Must be one of: ${validManagers.join(', ')}`);
+  process.exit(1);
+}
+
 async function main() {
   const argProjectName = process.argv[2];
 
@@ -53,18 +63,24 @@ async function main() {
   }
 
   // Package manager
-  const pkgManager = await p.select({
-    message: 'Which package manager would you like to use?',
-    options: [
-      { value: 'pnpm', label: 'pnpm', hint: 'recommended' },
-      { value: 'npm', label: 'npm' },
-      { value: 'yarn', label: 'yarn' },
-      { value: 'bun', label: 'bun' },
-    ],
-  });
-  if (p.isCancel(pkgManager)) {
-    p.cancel('Operation cancelled.');
-    process.exit(0);
+  let pkgManager: PackageManager;
+  if (argPkgManager) {
+    pkgManager = argPkgManager as PackageManager;
+  } else {
+    const selected = await p.select<PackageManager>({
+      message: 'Which package manager would you like to use?',
+      options: [
+        { value: 'pnpm', label: 'pnpm', hint: 'recommended' },
+        { value: 'npm', label: 'npm' },
+        { value: 'yarn', label: 'yarn' },
+        { value: 'bun', label: 'bun' },
+      ],
+    });
+    if (p.isCancel(selected)) {
+      p.cancel('Operation cancelled.');
+      process.exit(0);
+    }
+    pkgManager = selected;
   }
 
   // Resolve target directory
@@ -105,7 +121,7 @@ async function main() {
   // Install dependencies
   const installSpinner = p.spinner();
   installSpinner.start(`Installing dependencies with ${pkgManager}...`);
-  const result = spawnSync(pkgManager as string, ['install'], {
+  const result = spawnSync(pkgManager, ['install'], {
     cwd: targetDir,
     stdio: 'pipe',
     shell: true,
