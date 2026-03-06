@@ -46,12 +46,13 @@ jobs:
       - run: pnpm build
 
       - name: Create test project via CLI
-        run: node dist/index.js test-app --pm pnpm
+        run: node $GITHUB_WORKSPACE/dist/index.js test-app --pm pnpm
+        working-directory: /tmp
 
       - name: Install dependencies in generated project
-        working-directory: test-app
+        working-directory: /tmp/test-app
         run: pnpm install
 
       - name: Build the generated template project
-        working-directory: test-app
+        working-directory: /tmp/test-app
         run: pnpm run build
