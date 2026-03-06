@@ -1,4 +1,4 @@
-# create-cutting-edge-react-app
+# create-cutting-edge-react-app (BETA - not everything is configured yet)
 
 Stop wasting time debating which libraries to use, wrestling with outdated AI-generated boilerplate, or untangling configurations that made sense six months ago. This CLI scaffolds a modern React project with a carefully chosen, human-configured tech stack — so you start with a solid foundation instead of technical debt.
 
